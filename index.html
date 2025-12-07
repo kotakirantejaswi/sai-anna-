@@ -3,56 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Anna</title>
+    <title>Sai Anna </title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        const PASSWORD = "sai18feb"; // marchuko
+        if(sessionStorage.getItem('ok') !== 'yes') {
+            let p = prompt("❤️ Password ra bangaram ❤️");
+            if(p !== PASSWORD) {
+                document.body.innerHTML = "<h1 style='text-align:center;margin-top:40vh;color:#ff3366'>Sai anna bangaram matrame open cheyochu ❤️</h1>";
+                throw "";
+            }
+            sessionStorage.setItem('ok','yes');
+        }
+    </script>
 </head>
 <body>
-
     <div class="tom-jerry-bg"></div>
 
-    <!-- Homepage - 4 buttons matrame -->
+    <!-- Homepage -->
     <div id="home" class="page">
-        <h1>Sai Anna's Birthday</h1>
+        <h1>Sai Anna</h1>
+        <div id="photoWall"></div>
+        <button onclick="pastePhoto()" class="cheese-btn" style="margin:20px;padding:15px 30px;font-size:1.3em">
+            📸 Paste a pic for Sai Anna
+        </button>
         <div class="countdown" id="countdown"></div>
         <div class="sections-vertical">
-            <button onclick="openPage('sec1')" class="cheese-btn">1. About You </button>
-            <button onclick="openPage('sec2')" class="cheese-btn">2. Beautiful Memories With U</button>
-            <button onclick="openPage('sec3')" class="cheese-btn">3. Doraemon</button>
-            <button onclick="openPage('sec4')" class="cheese-btn">4. Birthday Gift</button>
+            <button onclick="openPage('sec1')">1. About You</button>
+            <button onclick="openPage('sec2')">2. Beautiful Memories</button>
+            <button onclick="openPage('sec3')">3. Doraemon</button>
+            <button onclick="openPage('sec4')">4. Birthday Gift 🚗</button>
         </div>
     </div>
 
-    <!-- Full sections (hidden until clicked) -->
-    <div id="sec1" class="page" style="display:none">
-        <button onclick="openPage('home')" class="back-btn">← Back</button>
-        <h2>How We Met</h2>
-        <textarea class="editable" placeholder="Nee story raayo bangaram..."></textarea>
-    </div>
-
-    <div id="sec2" class="page" style="display:none">
-        <button onclick="openPage('home')" class="back-btn">← Back</button>
-        <h2>Beautiful Memories With U</h2>
-        <textarea class="editable" placeholder="Anna tho moments raa..."></textarea>
-    </div>
-
-    <div id="sec3" class="page" style="display:none">
-        <button onclick="openPage('home')" class="back-btn">← Back</button>
-        <h2>Doraemon</h2>
-        <textarea class="editable" placeholder="Doraemon + anna stories..."></textarea>
-    </div>
-
-    <div id="sec4" class="page" style="display:none">
+    <!-- Sections (same as before) -->
+    <div id="sec1" class="page"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>How We Met</h2><textarea class="editable" placeholder="Raayo ra..."></textarea></div>
+    <div id="sec2" class="page"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>Beautiful Memories</h2><textarea class="editable" placeholder="Moments..."></textarea></div>
+    <div id="sec3" class="page"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>Doraemon</h2><textarea class="editable" placeholder="Stories..."></textarea></div>
+    <div id="sec4" class="page">
         <button onclick="openPage('home')" class="back-btn">← Back</button>
         <h2>Birthday Gift ♡</h2>
-        <div class="car-gift" onclick="this.style.display='none';document.getElementById('car').style.display='block'">
-            Click to open gift!
-        </div>
-        <div id="car" style="display:none;text-align:center">
-            <img src="https://via.placeholder.com/600x350/FF0000/FFFFFF?text=♥+HotWheels+Car+for+Sai+Anna+♥" class="car-img">
-            <p style="font-size:1.5em;margin-top:20px">Happy Birthday Sai Anna – Feb 18! 🚗💙</p>
+        <div class="car-gift" onclick="this.style.display='none';document.getElementById('giftcar').style.display='block'">Click chey gift chudataniki!</div>
+        <div id="giftcar" style="display:none;text-align:center">
+            <img src="https://via.placeholder.com/600x400/FF0000/FFF?text=♥+HotWheels+Car+♥" class="car-img">
+            <p style="font-size:2em;margin:30px">Happy Birthday Sai Anna – Feb 18! 🚗</p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Countdown
+        const countdown = document.getElementById('countdown');
+        function update() {
+            let now = new Date();
+            let bday = new Date(now.getFullYear(), 1, 18);
+            if (now > bday) bday.setFullYear(now.getFullYear()+1);
+            let days = Math.floor((bday-now)/(1000*60*60*24));
+            countdown.innerHTML = `Sai Anna Birthday ki inka ${days} days ♡`;
+        }
+        update(); setInterval(update, 86400000);
+
+        // Open pages
+        function openPage(id) { document.querySelectorAll('.page').forEach(p=>p.style.display='none'); document.getElementById(id).style.display='block'; }
+
+        // Paste photo magic (no code needed)
+        function pastePhoto() {
+            let input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = e => {
+                let file = e.target.files[0];
+                let reader = new FileReader();
+                reader.onload = function(ev) {
+                    let img = document.createElement('img');
+                    img.src = ev.target.result;
+                    img.style = "width:90%;max-width:400px;border-radius:20px;margin:15px;box-shadow:0 10px 20px rgba(0,0,0,0.3);";
+                    document.getElementById('photoWall').prepend(img);
+
+                    // Save forever
+                    let saved = JSON.parse(localStorage.getItem('saiPhotos')||'[]');
+                    saved.push(ev.target.result);
+                    localStorage.setItem('saiPhotos', JSON.stringify(saved));
+                }
+                reader.readAsDataURL(file);
+            }
+            input.click();
+        }
+
+        // Load old photos
+        window.onload = () => {
+            let saved = JSON.parse(localStorage.getItem('saiPhotos')||'[]');
+            saved.forEach(src => {
+                let img = document.createElement('img');
+                img.src = src;
+                img.style = "width:90%;max-width:400px;border-radius:20px;margin:15px;box-shadow:0 10px 20px rgba(0,0,0,0.3);";
+                document.getElementById('photoWall').appendChild(img);
+            });
+        }
+    </script>
 </body>
 </html>
