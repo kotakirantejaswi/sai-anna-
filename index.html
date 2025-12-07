@@ -3,49 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Anna Birthday</title>
+    <title>Sai Anna Forever ♡</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="tom-jerry-bg"></div>
     <div class="container">
-        <h1 id="title">Sai Anna's Birthday</h1>
+        <h1>Sai Anna's Tom & Jerry World ♡</h1>
         <div class="countdown" id="countdown"></div>
-        <nav class="sections">
-            <a href="#section1" class="cheese-btn">1. How We Met</a>
-            <a href="#section2" class="cheese-btn">2. Beautiful Memories With U</a>
-            <a href="#section3" class="cheese-btn">3. Doraemon</a>
-            <a href="#section4" class="cheese-btn">4. Birthday Gift</a>
-        </nav>
-        
-        <!-- Section 1: How We Met -->
-        <section id="section1" class="section">
-            <h2>How We Met</h2>
-            <textarea class="editable" placeholder="Nee story raa bangaram... (nuvvu edit cheyochu)"></textarea>
-        </section>
-        
-        <!-- Section 2: Beautiful Memories -->
-        <section id="section2" class="section">
-            <h2>Beautiful Memories With U</h2>
-            <textarea class="editable" placeholder="Beautiful moments... add chey ra"></textarea>
-        </section>
-        
-        <!-- Section 3: Doraemon -->
-        <section id="section3" class="section">
-            <h2>Doraemon</h2>
-            <textarea class="editable" placeholder="Doraemon + anna stories... fill chey"></textarea>
-        </section>
-        
-        <!-- Section 4: Birthday Gift -->
-        <section id="section4" class="section">
-            <h2>Birthday Gift ♡</h2>
-            <div class="car-gift" id="carGift">Click to open gift!</div>
-            <div class="car-animation hidden" id="carAnim">
-                <img src="https://via.placeholder.com/300x150?text=HotWheels+Car" alt="HotWheels Car" class="car-img">
-                <p>Happy Birthday Sai Anna - Feb 18! 🚗💙</p>
-            </div>
-        </section>
+
+        <!-- 4 options line-by-line (vertical) -->
+        <div class="sections-vertical">
+            <button onclick="show('sec1')" class="cheese-btn">1. How We Met</button>
+            <button onclick="show('sec2')" class="cheese-btn">2. Beautiful Memories With U</button>
+            <button onclick="show('sec3')" class="cheese-btn">3. Doraemon</button>
+            <button onclick="show('sec4')" class="cheese-btn">4. Birthday Gift</button>
+        </div>
+
+        <div style="margin-top:40px;">
+            <button onclick="show('home')" class="back-btn">← Back to Home</button>
+        </div>
     </div>
+
+    <!-- Content area – only one section shows at a time -->
+    <div id="content" class="content-area"></div>
+
+    <!-- Hidden sections -->
+    <div style="display:none">
+        <div id="sec1"><h2>How We Met</h2><textarea class="editable" placeholder="Nee story raayo bangaram..."></textarea></div>
+        <div id="sec2"><h2>Beautiful Memories With U</h2><textarea class="editable" placeholder="Anna tho moments..."></textarea></div>
+        <div id="sec3"><h2>Doraemon</h2><textarea class="editable" placeholder="Doraemon + anna stories..."></textarea></div>
+        <div id="sec4">
+            <h2>Birthday Gift ♡</h2>
+            <div class="car-gift" onclick="document.getElementById('carAnim').classList.remove('hidden');this.style.display='none'">Click to open gift!</div>
+            <div class="car-animation hidden" id="carAnim">
+                <img src="https://via.placeholder.com/500x300/FF0000/FFFFFF?text=♥+HotWheels+Car+for+Sai+Anna+♥" class="car-img">
+                <p>Happy Birthday Sai Anna – Feb 18! 🚗💙</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
