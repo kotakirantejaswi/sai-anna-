@@ -1,27 +1,26 @@
-// Countdown to Feb 18
 function updateCountdown() {
     const now = new Date();
-    const birthday = new Date(now.getFullYear(), 1, 18); // Feb 18
-    if (now > birthday) birthday.setFullYear(now.getFullYear() + 1);
-    const diff = birthday - now;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const bday = new Date(now.getFullYear(), 1, 18);
+    if (now > bday) bday.setFullYear(now.getFullYear() + 1);
+    const days = Math.floor((bday - now) / (1000*60*60*24));
     document.getElementById('countdown').innerHTML = `Sai Anna Birthday ki inka ${days} days ♡`;
 }
-setInterval(updateCountdown, 86400000); // Daily update
 updateCountdown();
+setInterval(updateCountdown, 86400000);
 
-// Editable texts save (local storage)
-document.querySelectorAll('.editable').forEach(textarea => {
-    const saved = localStorage.getItem(textarea.id || textarea.className);
-    if (saved) textarea.value = saved;
-    textarea.addEventListener('input', () => {
-        localStorage.setItem(textarea.id || textarea.className, textarea.value);
-    });
+function openPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+
+// Save text automatically
+document.addEventListener('input', e => {
+    if (e.target.classList.contains('editable')) {
+        localStorage.setItem(e.target.parentElement.id, e.target.value);
+    }
 });
-
-// Birthday gift surprise
-document.getElementById('carGift').addEventListener('click', () => {
-    document.getElementById('carGift').style.display = 'none';
-    document.getElementById('carAnim').classList.remove('hidden');
-    // Add confetti or sound if you want (optional)
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.editable').forEach(ta => {
+        ta.value = localStorage.getItem(ta.parentElement.id) || '';
+    });
 });
