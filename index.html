@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Anna Forever ♡</title>
+    <title>Sai Anna's Birthday ♡</title>
     <style>
         body,html{margin:0;padding:0;height:100%;font-family:'Comic Sans MS',cursive;overflow:hidden;background:#87CEEB}
-        #bgWall{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:5px;padding:5px;box-sizing:border-box}
-        #bgWall img{width:100%;height:100%;object-fit:cover;border-radius:15px;opacity:0.9;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:0.3s}
-        #bgWall img:hover{transform:scale(1.05);z-index:1}
-        .container{position:relative;z-index:2;text-align:center;padding:20px;color:#333}
-        h1{font-size:2.8em;color:#FF4500;text-shadow:3px 3px #fff}
-        .countdown{font-size:1.8em;color:#4B0082;margin:20px}
-        .sections-vertical{display:flex;flex-direction:column;gap:25px;align-items:center;margin:30px 0}
-        .cheese-btn{width:80%;max-width:420px;padding:20px;font-size:1.5em;background:#FFD700;border:none;border-radius:50px;box-shadow:0 8px #FFA500;cursor:pointer}
-        .paste-btn{margin:20px;padding:15px 40px;font-size:1.4em;background:#FF69B4;color:white;border:none;border-radius:50px;cursor:pointer}
-        .back-btn{margin:20px;padding:12px 30px;background:rgba(255,255,255,0.5);border:2px solid #fff;border-radius:30px;color:white}
-        .page{display:none;min-height:100vh;padding:20px}
+        #bgWall{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;padding:8px;box-sizing:border-box}
+        #bgWall img{width:100%;height:100%;object-fit:cover;border-radius:20px;opacity:0.92;box-shadow:0 6px 15px rgba(0,0,0,0.4);transition:0.4s}
+        #bgWall img:hover{transform:scale(1.08);opacity:1}
+        .container{position:relative;z-index:2;text-align:center;padding:30px;color:#333}
+        h1{font-size:3.2em;color:#FF3366;text-shadow:4px 4px #fff;margin:20px 0}
+        .countdown{font-size:2em;color:#4B0082;margin:25px 0}
+        .sections-vertical{display:flex;flex-direction:column;gap:28px;align-items:center;margin:40px 0}
+        .cheese-btn{width:88%;max-width:460px;padding:22px;font-size:1.6em;background:#FFD700;border:none;border-radius:50px;box-shadow:0 10px #FFA500;cursor:pointer}
+        .paste-btn{margin:30px auto;padding:18px 50px;font-size:1.6em;background:#FF69B4;color:white;border:none;border-radius:50px;cursor:pointer;display:block}
+        .back-btn{margin:30px;padding:15px 35px;background:rgba(255,255,255,0.5);border:3px solid #fff;border-radius:40px;color:#333;font-weight:bold}
+        .page{display:none;min-height:100vh;padding:30px}
         #home{display:block}
-        .editable{width:90%;max-width:700px;height:300px;padding:15px;font-size:1.1em;border:3px dashed #FF69B4;border-radius:15px}
-        .car-img{max-width:90%;border-radius:20px;margin:20px 0}
+        .editable{width:92%;max-width:800px;height:320px;padding:20px;font-size:1.2em;border:4px dashed #FF69B4;border-radius:20px;background:rgba(255,255,255,0.9)}
+        .car-img{max-width:92%;border-radius:25px;margin:30px 0;box-shadow:0 15px 30px rgba(0,0,0,0.4)}
     </style>
 </head>
 <body>
 
-    <!-- Background photo wall -->
+    <!-- Background lo Sai anna + nee photos wall -->
     <div id="bgWall"></div>
 
     <!-- Homepage -->
     <div id="home" class="container">
-        <h1>Sai Anna's Tom & Jerry World ♡</h1>
+        <h1>Sai Anna's Birthday ♡</h1>
         <div class="countdown" id="countdown"></div>
         
-        <!-- Button okkasari upload ayithe disappear -->
+        <!-- Okkasari upload ayithe button poyiddi -->
         <button id="pasteBtn" onclick="pastePhoto()" class="paste-btn">📸 Paste a pic for Sai Anna</button>
         
         <div class="sections-vertical">
@@ -43,36 +43,36 @@
         </div>
     </div>
 
-    <!-- Sections (same as before) -->
-    <div id="sec1" class="page container"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>How We Met</h2><textarea class="editable" placeholder="Raayo ra..."></textarea></div>
-    <div id="sec2" class="page container"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>Beautiful Memories</h2><textarea class="editable" placeholder="Moments..."></textarea></div>
-    <div id="sec3" class="page container"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>Doraemon</h2><textarea class="editable" placeholder="Stories..."></textarea></div>
+    <!-- Sections -->
+    <div id="sec1" class="page container"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>How We Met</h2><textarea class="editable" placeholder="Raayo ra bangaram..."></textarea></div>
+    <div id="sec2" class="page container"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>Beautiful Memories</h2><textarea class="editable" placeholder="Anna tho moments..."></textarea></div>
+    <div id="sec3" class="page container"><button onclick="openPage('home')" class="back-btn">← Back</button><h2>Doraemon</h2><textarea class="editable" placeholder="Doraemon + anna stories..."></textarea></div>
     <div id="sec4" class="page container">
         <button onclick="openPage('home')" class="back-btn">← Back</button>
         <h2>Birthday Gift ♡</h2>
-        <div onclick="this.style.display='none';document.getElementById('gift').style.display='block'" style="cursor:pointer;background:#ff3366;color:white;padding:20px;border-radius:20px;margin:20px">Click chey gift chudataniki!</div>
+        <div onclick="this.style.display='none';document.getElementById('gift').style.display='block'" style="cursor:pointer;background:#ff3366;color:white;padding:25px;border-radius:25px;margin:30px;font-size:1.5em">Click chey gift chudataniki!</div>
         <div id="gift" style="display:none;text-align:center">
-            <img src="https://via.placeholder.com/600x400/FF0000/FFF?text=♥+HotWheels+Car+♥" class="car-img">
-            <p style="font-size:2em;margin:30px">Happy Birthday Sai Anna – Feb 18! 🚗💙</p>
+            <img src="https://via.placeholder.com/700x450/FF0000/FFF?text=♥+HotWheels+Car+for+Sai+Anna+♥" class="car-img">
+            <p style="font-size:2.5em;margin:40px;color:#FF3366">Happy Birthday Sai Anna – Feb 18! 🚗💙</p>
         </div>
     </div>
 
     <script>
+        // Password
         const PASSWORD = "sai18feb";
         if(sessionStorage.getItem('ok')!=='yes'){
             let p=prompt("❤️ Password ra bangaram ❤️");
-            if(p!==PASSWORD){document.body.innerHTML="<h1 style='text-align:center;margin-top:40vh;color:#ff3366'>Sai anna bangaram matrame ❤️</h1>";throw"";}
+            if(p!==PASSWORD){document.body.innerHTML="<h1 style='text-align:center;margin-top:40vh;color:#ff3366'>Sai anna bangaram matrame open cheyochu ❤️</h1>";throw"";}
             sessionStorage.setItem('ok','yes');
         }
 
         // Countdown
-        function update(){let n=new Date(),b=new Date(n.getFullYear(),1,18);if(n>b)b.setFullYear(n.getFullYear()+1);let d=Math.floor((b-n)/(864e5));document.getElementById('countdown').innerHTML=`Sai Anna Birthday ki inka ${d} days ♡`;}
-        update();setInterval(update,864e5);
+        function update(){let n=new Date(),b=new Date(n.getFullYear(),1,18);if(n>b)b.setFullYear(n.getFullYear()+1);let d=Math.floor((b-n)/(86400000));document.getElementById('countdown').innerHTML=`Sai Anna Birthday Countdown ${d} days ♡`;}
+        update();setInterval(update,86400000);
 
-        // Open page
         function openPage(id){document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';}
 
-        // Paste photo – okkasari ayithe button poyiddi
+        // Photo upload → background wall + button disappear
         function pastePhoto(){
             let i=document.createElement('input');i.type='file';i.accept='image/*';
             i.onchange=e=>{
@@ -82,28 +82,22 @@
                     let img=document.createElement('img');
                     img.src=ev.target.result;
                     document.getElementById('bgWall').prepend(img);
-                    
-                    // Save forever
                     let s=JSON.parse(localStorage.getItem('saiWall')||'[]');
                     s.push(ev.target.result);
                     localStorage.setItem('saiWall',JSON.stringify(s));
-                    
-                    // Button disappear
-                    document.getElementById('pasteBtn').style.display = 'none';
-                    localStorage.setItem('photoUploaded','yes');
+                    document.getElementById('pasteBtn').style.display='none';
+                    localStorage.setItem('photoDone','yes');
                 };
                 r.readAsDataURL(f);
             };
             i.click();
         }
 
-        // Load old photos + button hide if already uploaded
+        // Load saved photos + hide button if already uploaded
         window.onload=()=>{
             let s=JSON.parse(localStorage.getItem('saiWall')||'[]');
             s.forEach(src=>{let img=document.createElement('img');img.src=src;document.getElementById('bgWall').appendChild(img);});
-            if(localStorage.getItem('photoUploaded')==='yes'){
-                document.getElementById('pasteBtn').style.display='none';
-            }
+            if(localStorage.getItem('photoDone')==='yes') document.getElementById('pasteBtn').style.display='none';
         }
     </script>
 </body>
