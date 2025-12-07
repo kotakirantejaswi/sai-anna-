@@ -3,43 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Anna </title>
+    <title>Sai Anna</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="tom-jerry-bg"></div>
-    <div class="container">
+
+    <!-- Homepage - 4 buttons matrame -->
+    <div id="home" class="page">
         <h1>Sai Anna's Birthday</h1>
         <div class="countdown" id="countdown"></div>
-
-        <!-- 4 options line-by-line (vertical) -->
         <div class="sections-vertical">
-            <button onclick="show('sec1')" class="cheese-btn">1. About You According To Me</button>
-            <button onclick="show('sec2')" class="cheese-btn">2. Beautiful Memories</button>
-            <button onclick="show('sec3')" class="cheese-btn">3. Doraemon</button>
-            <button onclick="show('sec4')" class="cheese-btn">4. Birthday Gift</button>
-        </div>
-
-        <div style="margin-top:40px;">
-            <button onclick="show('home')" class="back-btn">← Back to Home</button>
+            <button onclick="openPage('sec1')" class="cheese-btn">1. </button>
+            <button onclick="openPage('sec2')" class="cheese-btn">2. Beautiful Memories With U</button>
+            <button onclick="openPage('sec3')" class="cheese-btn">3. Doraemon</button>
+            <button onclick="openPage('sec4')" class="cheese-btn">4. Birthday Gift</button>
         </div>
     </div>
 
-    <!-- Content area – only one section shows at a time -->
-    <div id="content" class="content-area"></div>
+    <!-- Full sections (hidden until clicked) -->
+    <div id="sec1" class="page" style="display:none">
+        <button onclick="openPage('home')" class="back-btn">← Back</button>
+        <h2>How We Met</h2>
+        <textarea class="editable" placeholder="Nee story raayo bangaram..."></textarea>
+    </div>
 
-    <!-- Hidden sections -->
-    <div style="display:none">
-        <div id="sec1"><h2>How We Met</h2><textarea class="editable" placeholder="Nee story raayo bangaram..."></textarea></div>
-        <div id="sec2"><h2>Beautiful Memories With U</h2><textarea class="editable" placeholder="Anna tho moments..."></textarea></div>
-        <div id="sec3"><h2>Doraemon</h2><textarea class="editable" placeholder="Doraemon + anna stories..."></textarea></div>
-        <div id="sec4">
-            <h2>Birthday Gift ♡</h2>
-            <div class="car-gift" onclick="document.getElementById('carAnim').classList.remove('hidden');this.style.display='none'">Click to open gift!</div>
-            <div class="car-animation hidden" id="carAnim">
-                <img src="https://via.placeholder.com/500x300/FF0000/FFFFFF?text=♥+HotWheels+Car+for+Sai+Anna+♥" class="car-img">
-                <p>Happy Birthday Sai Anna – Feb 18! 🚗💙</p>
-            </div>
+    <div id="sec2" class="page" style="display:none">
+        <button onclick="openPage('home')" class="back-btn">← Back</button>
+        <h2>Beautiful Memories With U</h2>
+        <textarea class="editable" placeholder="Anna tho moments raa..."></textarea>
+    </div>
+
+    <div id="sec3" class="page" style="display:none">
+        <button onclick="openPage('home')" class="back-btn">← Back</button>
+        <h2>Doraemon</h2>
+        <textarea class="editable" placeholder="Doraemon + anna stories..."></textarea>
+    </div>
+
+    <div id="sec4" class="page" style="display:none">
+        <button onclick="openPage('home')" class="back-btn">← Back</button>
+        <h2>Birthday Gift ♡</h2>
+        <div class="car-gift" onclick="this.style.display='none';document.getElementById('car').style.display='block'">
+            Click to open gift!
+        </div>
+        <div id="car" style="display:none;text-align:center">
+            <img src="https://via.placeholder.com/600x350/FF0000/FFFFFF?text=♥+HotWheels+Car+for+Sai+Anna+♥" class="car-img">
+            <p style="font-size:1.5em;margin-top:20px">Happy Birthday Sai Anna – Feb 18! 🚗💙</p>
         </div>
     </div>
 
